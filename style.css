@@ -1,0 +1,974 @@
+
+/* =========================================
+   ORIENTE SUSHI DELIVERY
+   Identidade Visual Premium
+   Preto • Branco • Vermelho Oriental
+========================================= */
+
+/* 1. VARIÁVEIS */
+:root {
+    --bg-primary: #090909;
+    --bg-secondary: #111111;
+    --bg-card: #151515;
+    --bg-card-hover: #1d1d1d;
+
+    --white: #ffffff;
+    --text-light: #d8d8d8;
+    --text-muted: #929292;
+
+    --red: #d71920;
+    --red-light: #f02b32;
+    --red-dark: #961016;
+
+    --border: rgba(255, 255, 255, 0.09);
+    --red-glow: rgba(215, 25, 32, 0.25);
+
+    --font-main: 'Montserrat', sans-serif;
+    --font-logo: 'Great Vibes', cursive;
+
+    --transition: all 0.3s ease;
+}
+
+/* 2. RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--white);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+::selection {
+    background: var(--red);
+    color: var(--white);
+}
+
+/* 3. CABEÇALHO */
+.header {
+    width: 100%;
+    height: 90px;
+
+    position: relative;
+    z-index: 100;
+
+    background: rgba(9, 9, 9, 0.96);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1250px;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.brand-symbol {
+    display: none;
+}
+
+.brand-name {
+    font-family: var(--font-logo);
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.brand-description {
+    color: var(--red-light);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-top: 5px;
+}
+
+.header-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 23px;
+
+    background: var(--red);
+    color: var(--white);
+
+    border-radius: 4px;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    transition: var(--transition);
+}
+
+.header-button i {
+    font-size: 1.1rem;
+}
+
+.header-button:hover {
+    background: var(--red-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px var(--red-glow);
+}
+
+/* 4. HERO PRINCIPAL */
+.hero {
+    min-height: 690px;
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #100909;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.96) 0%,
+            rgba(0, 0, 0, 0.83) 42%,
+            rgba(0, 0, 0, 0.38) 100%
+        ),
+        url("img/banner-sushi.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            var(--bg-primary) 0%,
+            transparent 20%,
+            transparent 80%,
+            rgba(0, 0, 0, 0.3) 100%
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+    padding: 100px 0;
+}
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--red-light);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.eyebrow-line {
+    width: 32px;
+    height: 1px;
+    background: var(--red);
+}
+
+.hero h1 {
+    max-width: 680px;
+
+    font-size: clamp(2.7rem, 6vw, 5.4rem);
+    font-weight: 800;
+
+    line-height: 1.12;
+    letter-spacing: -2px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--red-light);
+}
+
+.hero-content > p {
+    max-width: 450px;
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    margin-top: 24px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin-top: 35px;
+}
+
+/* 5. BOTÕES */
+.primary-button {
+    min-height: 52px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 0 28px;
+
+    color: var(--white);
+    background: var(--red);
+
+    border: 1px solid var(--red);
+    border-radius: 3px;
+
+    font-size: 0.77rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    transition: var(--transition);
+}
+
+.primary-button:hover {
+    background: var(--red-light);
+    border-color: var(--red-light);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 25px var(--red-glow);
+}
+
+.primary-button i {
+    font-size: 1.15rem;
+}
+
+.secondary-button {
+    min-height: 52px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 0 24px;
+
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: var(--transition);
+}
+
+.secondary-button:hover {
+    border-color: var(--red);
+    color: var(--red-light);
+}
+
+.secondary-button i {
+    font-size: 0.8rem;
+}
+
+/* 6. INFORMAÇÕES INFERIORES DO HERO */
+.hero-bottom {
+    position: absolute;
+    bottom: 25px;
+    left: 5%;
+    right: 5%;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* 7. APRESENTAÇÃO DA MARCA */
+.about {
+    padding: 105px 20px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(215, 25, 32, 0.07),
+            transparent 65%
+        ),
+        var(--bg-primary);
+
+    text-align: center;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-subtitle {
+    display: inline-block;
+
+    color: var(--red-light);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.section-heading h2,
+.cta-content h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.section-heading h2 span,
+.cta-content h2 span {
+    color: var(--red-light);
+}
+
+.section-heading > p {
+    max-width: 570px;
+
+    margin: 20px auto 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.92rem;
+    line-height: 1.9;
+}
+
+/* 8. SEÇÃO DE CONTATOS */
+.contact-section {
+    padding: 100px 20px 110px;
+
+    background: var(--bg-secondary);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-grid {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+/* 9. CARDS DE CONTATO */
+.contact-card {
+    min-height: 135px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    transition: var(--transition);
+}
+
+.contact-card::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: var(--red);
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(215, 25, 32, 0.55);
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.contact-card:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+.card-icon {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(215, 25, 32, 0.10);
+    border: 1px solid rgba(215, 25, 32, 0.25);
+
+    border-radius: 50%;
+
+    color: var(--red-light);
+    font-size: 1.35rem;
+
+    transition: var(--transition);
+}
+
+.contact-card:hover .card-icon {
+    background: var(--red);
+    color: var(--white);
+
+    box-shadow: 0 0 20px var(--red-glow);
+}
+
+.card-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.card-label {
+    display: block;
+
+    color: var(--red-light);
+
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+.card-content h3 {
+    color: var(--white);
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    color: var(--text-muted);
+
+    font-size: 0.76rem;
+    line-height: 1.6;
+}
+
+.card-arrow {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+
+    transition: var(--transition);
+}
+
+.contact-card:hover .card-arrow {
+    color: var(--red-light);
+    transform: translate(3px, -3px);
+}
+
+/* 10. CHAMADA FINAL */
+.final-cta {
+    padding: 110px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(215, 25, 32, 0.16),
+            transparent 65%
+        ),
+        #0b0b0b;
+}
+
+.final-cta::before {
+    content: "";
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border: 1px solid rgba(215, 25, 32, 0.10);
+    border-radius: 50%;
+
+    top: -130px;
+    left: -100px;
+}
+
+.final-cta::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(215, 25, 32, 0.10);
+    border-radius: 50%;
+
+    bottom: -170px;
+    right: -100px;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content > p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+
+    margin: 18px 0 30px;
+}
+
+/* 11. RODAPÉ */
+.footer {
+    padding: 55px 20px 30px;
+
+    background: #050505;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.footer-brand {
+    color: var(--white);
+
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.footer-brand span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--red-light);
+
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+}
+
+.footer > p {
+    color: var(--text-muted);
+
+    font-size: 0.75rem;
+    font-style: italic;
+
+    margin-top: 17px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+
+    margin: 25px 0 30px;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    color: var(--white);
+    font-size: 1rem;
+
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background: var(--red);
+    border-color: var(--red);
+
+    transform: translateY(-4px);
+}
+
+.copyright {
+    width: 100%;
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+
+    color: #686868;
+
+    font-size: 0.68rem;
+}
+
+/* 12. ANIMAÇÕES */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content > * {
+    animation: fadeUp 0.8s ease both;
+}
+
+.hero-content > *:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.hero-content > *:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.hero-content > *:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+/* 13. ACESSIBILIDADE */
+a:focus-visible {
+    outline: 2px solid var(--red-light);
+    outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 14. TABLETS */
+@media (max-width: 768px) {
+
+    .header {
+        height: 78px;
+    }
+
+    .header-container {
+        width: 92%;
+    }
+
+    .brand-name {
+        font-size: 2.1rem;
+    }
+
+    .hero {
+        min-height: 620px;
+
+        background-position: 58% center;
+
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.93),
+                rgba(0, 0, 0, 0.65)
+            ),
+            url("img/banner-sushi.jpg");
+    }
+
+    .hero-content {
+        width: 88%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.6rem, 8vw, 4rem);
+    }
+
+    .about {
+        padding: 80px 20px;
+    }
+
+    .contact-section {
+        padding: 80px 20px;
+    }
+
+    .contact-grid {
+        gap: 13px;
+        margin-top: 40px;
+    }
+
+    .contact-card {
+        padding: 20px;
+        gap: 13px;
+    }
+
+    .card-icon {
+        width: 47px;
+        height: 47px;
+        min-width: 47px;
+        font-size: 1.1rem;
+    }
+
+    .card-content h3 {
+        font-size: 0.88rem;
+    }
+
+    .card-content p {
+        font-size: 0.7rem;
+    }
+}
+
+/* 15. CELULARES */
+@media (max-width: 550px) {
+
+    .header {
+        height: 72px;
+    }
+
+    .brand-name {
+        font-size: 1.9rem;
+    }
+
+    .brand-description {
+        font-size: 0.54rem;
+        letter-spacing: 3px;
+    }
+
+    .header-button {
+        padding: 11px 13px;
+        font-size: 0.67rem;
+    }
+
+    .header-button i {
+        font-size: 1rem;
+    }
+
+    .hero {
+        min-height: 620px;
+
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        width: 88%;
+        padding: 80px 0;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        gap: 8px;
+    }
+
+    .eyebrow-line {
+        width: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.45rem, 11vw, 3.7rem);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-content > p {
+        max-width: 330px;
+        font-size: 0.85rem;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 300px;
+        gap: 12px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+        padding: 0 15px;
+        font-size: 0.69rem;
+    }
+
+    .hero-bottom {
+        bottom: 18px;
+
+        flex-direction: column;
+        gap: 5px;
+
+        font-size: 0.52rem;
+        letter-spacing: 1.2px;
+    }
+
+    .about {
+        padding: 75px 22px;
+    }
+
+    .section-heading h2,
+    .cta-content h2 {
+        font-size: 2.1rem;
+    }
+
+    .section-heading > p {
+        font-size: 0.82rem;
+    }
+
+    .contact-section {
+        padding: 75px 18px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+        gap: 12px;
+        margin-top: 35px;
+    }
+
+    .contact-card {
+        min-height: 115px;
+        padding: 18px;
+    }
+
+    .card-content h3 {
+        font-size: 0.92rem;
+    }
+
+    .card-content p {
+        font-size: 0.73rem;
+    }
+
+    .final-cta {
+        padding: 85px 22px;
+    }
+
+    .footer {
+        padding: 45px 18px 25px;
+    }
+
+    .copyright {
+        font-size: 0.62rem;
+        line-height: 1.8;
+    }
+}
+
+/* 16. CELULARES PEQUENOS */
+@media (max-width: 360px) {
+
+    .header-button {
+        gap: 6px;
+        padding: 10px;
+        font-size: 0.6rem;
+    }
+
+    .brand-name {
+        font-size: 1.7rem;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .contact-card {
+        gap: 11px;
+        padding: 15px;
+    }
+
+    .card-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+    }
+
+    .card-label {
+        font-size: 0.52rem;
+    }
+}
